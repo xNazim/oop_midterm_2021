@@ -11,29 +11,23 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToolBar;
 import javafx.stage.Stage;
 
-public class Airspace extends Application{
+public class Sky extends Application{
 	static Group root = new Group();
 	static double width = 700;
 	static double height = 600;
 	static boolean species = false;
 
 	public static void main(String[] args) {launch();}
-	
+
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("Flock control");
 		
-		primaryStage.setOnCloseRequest(event0 -> {
-			System.exit(0);
-		});
+		primaryStage.setOnCloseRequest(event0 -> System.exit(0));
 		
-		primaryStage.widthProperty().addListener(event1 -> {
-			width = primaryStage.getWidth();
-		});
-		primaryStage.heightProperty().addListener(event2 -> {
-			height = primaryStage.getHeight();
-		});
-		
-		//Ugly but useful toolBar
+		primaryStage.widthProperty().addListener(event1 -> width = primaryStage.getWidth());
+		primaryStage.heightProperty().addListener(event2 -> height = primaryStage.getHeight());
+
+
 		ToolBar settings = new ToolBar();		
 		Label current = new Label("Current mode: one flock");
 		
@@ -51,7 +45,7 @@ public class Airspace extends Application{
 		settings.getItems().addAll(mode,current);
 		root.getChildren().add(settings);
 
-		//start of the flock
+
 		Flock f = new Flock();
 		f.draw(root);
 		
@@ -59,11 +53,11 @@ public class Airspace extends Application{
 		TimerTask task = new TimerTask(){
 			public void run(){
 		        f.update(species);
-			};
+			}
 		};
-		
-		//task runs at 30 tps (ticks per second)
-		timer.scheduleAtFixedRate(task, 0, 33l);
+
+
+		timer.scheduleAtFixedRate(task, 0, 33L);
 		
 		Scene s = new Scene(root,width,height);
 		primaryStage.setScene(s);
