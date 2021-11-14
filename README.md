@@ -9,4 +9,4 @@
 #### Here's gif of application:
 ![alt text](gif/oop.gif)
 
-### Here you see that, applicayion has two modes: one flock and many flocks. In one flock mode they'll join in one flock, and in many flocks vice versa.
+### Here you see that, application has two modes: one flock and many flocks. In one flock mode they'll join in one flock, and in many flocks vice versa.
