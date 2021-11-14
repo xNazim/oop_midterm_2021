@@ -18,12 +18,12 @@ public class Bird {
 	
 	public Bird() {
 		type = new Species(ThreadLocalRandom.current().nextInt(0,6));
-		center = new Point2D(ThreadLocalRandom.current().nextDouble()*Airspace.width,ThreadLocalRandom.current().nextDouble()*Airspace.height);
+		center = new Point2D(ThreadLocalRandom.current().nextDouble()*Sky.width,ThreadLocalRandom.current().nextDouble()*Sky.height);
 		velocity = new Point2D(((ThreadLocalRandom.current().nextDouble()*2 )-1)*5,((ThreadLocalRandom.current().nextDouble()*2 )-1)*5);
 		acceleration = new Point2D(0,0);
 	}
 	
-	//Overloaded the main methods to support 1 species and many species mode
+
 	public void cohesion(Bird[] mates,double range,double factor) {
 		double count = 1;
 		Point2D acc = new Point2D(0,0);
