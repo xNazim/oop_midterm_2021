@@ -13,8 +13,8 @@ import javafx.stage.Stage;
 
 public class Sky extends Application{
 	static Group root = new Group();
-	static double width = 700;
-	static double height = 600;
+	static double width = 1020;
+	static double height = 720;
 	static boolean species = false;
 
 	public static void main(String[] args) {launch();}
